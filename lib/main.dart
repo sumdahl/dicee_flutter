@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-int counter = 5;
+import 'package:flutter/material.dart';
 
 void main() {
   return runApp(
@@ -24,23 +24,32 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    changeDice() {}
-
     return Center(
       child: Row(
         children: [
           Expanded(
             child: TextButton(
-              onPressed: changeDice(),
-              child: Image.asset(
-                'images/dice1.png',
+              onPressed: () {
+                print('Left button got pressed');
+              },
+              child: Padding(
+                padding: EdgeInsets.all(12),
+                child: Image.asset(
+                  'images/dice1.png',
+                ),
               ),
             ),
           ),
           Expanded(
-            child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Image.asset('images/dice2.png')),
+            child: TextButton(
+              onPressed: () {
+                print('Right button got pressed');
+              },
+              child: Padding(
+                padding: EdgeInsets.all(12),
+                child: Image.asset('images/dice2.png'),
+              ),
+            ),
           ),
         ],
       ),
