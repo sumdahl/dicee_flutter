@@ -41,7 +41,9 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                   print('Left Dice Number = $leftDiceNumber');
+                  print('Right Dice Number = $rightDiceNumber');
                 });
               },
               child: Padding(
@@ -55,8 +57,10 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   rightDiceNumber = Random().nextInt(6) + 1;
+                  leftDiceNumber = Random().nextInt(6) + 1;
                 });
                 print('Right Dice Number = $rightDiceNumber');
+                print('Left Dice Number = $leftDiceNumber');
               },
               child: Padding(
                 padding: EdgeInsets.all(8),
